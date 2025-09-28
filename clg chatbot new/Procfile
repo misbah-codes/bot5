@@ -1,0 +1,11 @@
+# Procfile for Heroku deployment
+# This file tells Heroku how to run your application
+
+# Web process using Gunicorn (production WSGI server)
+web: gunicorn --config gunicorn.conf.py wsgi:app
+
+# Alternative: Using uWSGI (uncomment if preferred)
+# web: uwsgi --http :$PORT --wsgi-file wsgi.py --callable app
+
+# Alternative: Using Waitress (Windows-compatible)
+# web: waitress-serve --port=$PORT wsgi:app
